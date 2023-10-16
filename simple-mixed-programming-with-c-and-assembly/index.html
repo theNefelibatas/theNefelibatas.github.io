@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>Simple Mixed Programming With C and Assembly - Nepenthe</title><meta name="Description" content="Calculating the Fibonacci sequence using mixed programming with C and Assembly languages."><meta property="og:title" content="Simple Mixed Programming With C and Assembly" />
+<meta property="og:description" content="Calculating the Fibonacci sequence using mixed programming with C and Assembly languages." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://example.org/simple-mixed-programming-with-c-and-assembly/" /><meta property="og:image" content="http://example.org/logo.png"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2023-10-16T13:00:11+08:00" />
+<meta property="article:modified_time" content="2023-10-16T13:00:11+08:00" /><meta property="og:site_name" content="Nepenthe." />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="http://example.org/logo.png"/>
+
+<meta name="twitter:title" content="Simple Mixed Programming With C and Assembly"/>
+<meta name="twitter:description" content="Calculating the Fibonacci sequence using mixed programming with C and Assembly languages."/>
+<meta name="application-name" content="Nepenthe">
+<meta name="apple-mobile-web-app-title" content="Nepenthe"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="http://example.org/simple-mixed-programming-with-c-and-assembly/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Simple Mixed Programming With C and Assembly",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/example.org\/simple-mixed-programming-with-c-and-assembly\/"
+        },"genre": "posts","keywords": "Assembly","wordcount":  597 ,
+        "url": "http:\/\/example.org\/simple-mixed-programming-with-c-and-assembly\/","datePublished": "2023-10-16T13:00:11+08:00","dateModified": "2023-10-16T13:00:11+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"author": {
+                "@type": "Person",
+                "name": "Nepenthe"
+            },"description": "Calculating the Fibonacci sequence using mixed programming with C and Assembly languages."
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('auto' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'auto' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Nepenthe"><span class="header-title-pre">😊</span><span id="id-1" class="typeit"></span><span class="header-title-post">✨</span></a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> Posts </a><a class="menu-item" href="/tags/"> Tags </a><a class="menu-item" href="/categories/"> Categories </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a><a href="javascript:void(0);" class="menu-item language" title="Select Language">
+                    <i class="fa fa-globe" aria-hidden="true"></i>                      
+                    <select class="language-select" id="language-select-desktop" onchange="location = this.value;"><option value="/simple-mixed-programming-with-c-and-assembly/" selected>English</option><option value="/zh-cn/simple-mixed-programming-with-c-and-assembly/">简体中文</option></select>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Nepenthe"><span class="header-title-pre">😊</span><span id="id-2" class="typeit"></span><span class="header-title-post">✨</span></a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/posts/" title="">Posts</a><a class="menu-item" href="/tags/" title="">Tags</a><a class="menu-item" href="/categories/" title="">Categories</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a><a href="javascript:void(0);" class="menu-item" title="Select Language">
+                    <i class="fa fa-globe fa-fw" aria-hidden="true"></i>
+                    <select class="language-select" onchange="location = this.value;"><option value="/simple-mixed-programming-with-c-and-assembly/" selected>English</option><option value="/zh-cn/simple-mixed-programming-with-c-and-assembly/">简体中文</option></select>
+                </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Simple Mixed Programming With C and Assembly</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="https://nepenthe.site/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Nepenthe</a></span>&nbsp;<span class="post-category">included in <a href="/categories/computing/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Computing</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-10-16">2023-10-16</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;597 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;3 minutes&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  data-kept="true">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#task">Task</a></li>
+    <li><a href="#environment">Environment</a></li>
+    <li><a href="#solution">Solution</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h2 id="task">Task</h2>
+<p>Given the function:</p>
+<p>$$
+\begin{aligned}
+F(n) &amp;=
+\begin{cases}
+n &amp; \textrm{if } n=0, 1, 2 \\
+F(n-1)+F(n-2) &amp; \textrm{if } n \geq 3 \textrm{, } n\in\mathbb{N}
+\end{cases}
+\end{aligned}
+$$</p>
+<p>Write an assembly subroutine <code>ditui1</code> to compute the above sequence. Use C functions to obtain the input, call the assembly function <code>ditui1</code>, and display the results returned by the subroutine.</p>
+<h2 id="environment">Environment</h2>
+<p>Programming Environment: WSL2 Ubuntu22.04</p>
+<p>Editor: VSCode</p>
+<p>Compiler versions are as follows:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">gcc --version
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-console" data-lang="console"><span class="line"><span class="cl"><span class="go">gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0
+</span></span></span><span class="line"><span class="cl"><span class="go">Copyright (C) 2021 Free Software Foundation, Inc.
+</span></span></span><span class="line"><span class="cl"><span class="go">This is free software; see the source for copying conditions.  There is NO
+</span></span></span><span class="line"><span class="cl"><span class="go">warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">nasm --version
+</span></span></code></pre></td></tr></table>
+</div>
+</div><div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-console" data-lang="console"><span class="line"><span class="cl"><span class="go">NASM version 2.15.05
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="solution">Solution</h2>
+<p>Write <code>main.c</code> to handle input and output and create <code>fibonacci.asm</code> to define the subroutine <code>ditui1</code>.</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">simple-mixed-programming
+</span></span><span class="line"><span class="cl">│
+</span></span><span class="line"><span class="cl">├── fibonacci.asm
+</span></span><span class="line"><span class="cl">│
+</span></span><span class="line"><span class="cl">└── main.c
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>To compile:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">nasm -f elf32 fibonacci.asm -o fibonacci.o
+</span></span><span class="line"><span class="cl">gcc -m32 main.c fibonacci.o -o fibonacci
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>The <code>main.c</code> code is:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="c1">// Declaration of the external assembly function
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="k">extern</span> <span class="kt">int</span> <span class="nf">ditui1</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kt">int</span> <span class="n">n</span><span class="p">,</span> <span class="n">result</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">// Get the input
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nf">printf</span><span class="p">(</span><span class="s">&#34;Enter a number: &#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">scanf</span><span class="p">(</span><span class="s">&#34;%d&#34;</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">n</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">// Call the assembly function
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="n">result</span> <span class="o">=</span> <span class="nf">ditui1</span><span class="p">(</span><span class="n">n</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="c1">// Display the result
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nf">printf</span><span class="p">(</span><span class="s">&#34;F(%d) = %d</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">result</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// 0, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, ...
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>In x86 assembly for architectures such as 8086, 80286, and 80386, registers are 16-bit and can be split into 8-bit high and low bytes for operations. For instance, the <code>ax</code> register can be divided into <code>ah</code> (high byte) and <code>al</code> (low byte), and so on.</p>
+<p>In 32-bit and 64-bit x86 architectures, like Intel Pentium, Core i7, and AMD64 processors, registers are 32-bit (64-bit for 64-bit architecture). In these architectures, <code>eax</code> is a 32-bit register, and there isn&rsquo;t a direct split into <code>eal</code> and <code>eah</code>.</p>
+<p>Thus, the <code>fibonacci.asm</code> will use 32-bit registers directly. The code is:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-fallback" data-lang="fallback"><span class="line"><span class="cl">section .text
+</span></span><span class="line"><span class="cl">global ditui1
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">ditui1:
+</span></span><span class="line"><span class="cl">    ; Protect the stack
+</span></span><span class="line"><span class="cl">    push ebx
+</span></span><span class="line"><span class="cl">    push ecx
+</span></span><span class="line"><span class="cl">    push edx
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    ; Check if the input n is 0 or 1
+</span></span><span class="line"><span class="cl">    cmp eax, 0  
+</span></span><span class="line"><span class="cl">    je end
+</span></span><span class="line"><span class="cl">    cmp eax, 1
+</span></span><span class="line"><span class="cl">    je end
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    ; Initialization
+</span></span><span class="line"><span class="cl">    mov ecx, eax
+</span></span><span class="line"><span class="cl">    xor eax, eax
+</span></span><span class="line"><span class="cl">    mov ebx, 0 ;; F(0)
+</span></span><span class="line"><span class="cl">    mov edx, 1 ;; F(1)
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">iteration:
+</span></span><span class="line"><span class="cl">    mov eax, edx   ; Save the previous number F(n-1) to the eax register
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    add edx, ebx   ; Compute the next Fibonacci number
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    mov ebx, eax   ; Update F(n-2)
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    loop iteration  ; Continue the loop
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    mov eax, edx
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">end:
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    pop edx
+</span></span><span class="line"><span class="cl">    pop ecx
+</span></span><span class="line"><span class="cl">    pop ebx
+</span></span><span class="line"><span class="cl">    ret            ; Return
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Executing the above commands would yield the following error:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-console" data-lang="console"><span class="line"><span class="cl"><span class="gp">$</span> nasm -f elf32 fibonacci.asm -o fibonacci.o
+</span></span><span class="line"><span class="cl"><span class="gp">$</span> gcc -m32 main.c fibonacci.o -o fibonacci
+</span></span><span class="line"><span class="cl"><span class="go">In file included from main.c:1:
+</span></span></span><span class="line"><span class="cl"><span class="go">/usr/include/stdio.h:27:10: fatal error: bits/libc-header-start.h: No such file or directory
+</span></span></span><span class="line"><span class="cl"><span class="go">   27 | #include &lt;bits/libc-header-start.h&gt;
+</span></span></span><span class="line"><span class="cl"><span class="go">      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+</span></span></span><span class="line"><span class="cl"><span class="go">compilation terminated.
+</span></span></span></code></pre></td></tr></table>
+</div>
+</div><p>Refer to the solution: <a href="https://stackoverflow.com/questions/54082459/fatal-error-bits-libc-header-start-h-no-such-file-or-directory-while-compili" target="_blank" rel="noopener noreffer ">c - &ldquo;fatal error: bits/libc-header-start.h: No such file or directory&rdquo; while compiling HTK - Stack Overflow</a></p>
+<p>On 64-bit Ubuntu, gcc normally only comes with 64-bit libraries. So, execute the following:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo apt-get install gcc-multilib
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>Then compile and run:</p>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt">1
+</span><span class="lnt">2
+</span><span class="lnt">3
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">nasm -f elf32 fibonacci.asm -o fibonacci.o
+</span></span><span class="line"><span class="cl">gcc -m32 main.c fibonacci.o -o fibonacci
+</span></span><span class="line"><span class="cl">./fibonacci
+</span></span></code></pre></td></tr></table>
+</div>
+</div></div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2023-10-16</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/simple-mixed-programming-with-c-and-assembly/index.md" target="_blank">Read Markdown</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="http://example.org/simple-mixed-programming-with-c-and-assembly/" data-title="Simple Mixed Programming With C and Assembly" data-hashtags="Assembly"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="http://example.org/simple-mixed-programming-with-c-and-assembly/" data-hashtag="Assembly"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Reddit" data-sharer="reddit" data-url="http://example.org/simple-mixed-programming-with-c-and-assembly/"><i class="fab fa-reddit fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/assembly/">Assembly Language</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">Powered by <a href="https://gohugo.io/" target="_blank" rel="noopener noreffer" title="Hugo 0.119.0">Hugo</a> | Theme - <a href="https://github.com/dillonzq/LoveIt" target="_blank" rel="noopener noreffer" title="LoveIt 0.2.11"><i class="far fa-kiss-wink-heart fa-fw" aria-hidden="true"></i> LoveIt</a>
+                </div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2023</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="https://nepenthe.site/" target="_blank">Nepenthe</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/typeit/index.umd.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js"></script><script type="text/javascript" src="/lib/katex/contrib/auto-render.min.js"></script><script type="text/javascript" src="/lib/katex/contrib/copy-tex.min.js"></script><script type="text/javascript" src="/lib/katex/contrib/mhchem.min.js"></script><script type="text/javascript" src="/lib/cookieconsent/cookieconsent.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{},"cookieconsent":{"content":{"dismiss":"Got it!","link":"Learn more","message":"This website uses Cookies to improve your experience."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"data":{"id-1":"Nepenthe's Website","id-2":"Nepenthe's Website"},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"lunr"},"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"id-1":["id-1"],"id-2":["id-2"]},"duration":-1,"speed":60}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

@@ -2,7 +2,7 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>http://example.org/categories/</loc><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
+            <loc>http://example.org/categories/</loc><lastmod>2023-10-16T13:00:11&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="zh-cn"
                         href="http://example.org/zh-cn/categories/"
@@ -11,7 +11,34 @@
                     hreflang="en"
                     href="http://example.org/categories/"
                     /></url><url>
-            <loc>http://example.org/</loc><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
+            <loc>http://example.org/tags/</loc><lastmod>2023-10-16T13:00:11&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="zh-cn"
+                        href="http://example.org/zh-cn/tags/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="en"
+                    href="http://example.org/tags/"
+                    /></url><url>
+            <loc>http://example.org/tags/assembly/</loc><lastmod>2023-10-16T13:00:11&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="zh-cn"
+                        href="http://example.org/zh-cn/tags/assembly/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="en"
+                    href="http://example.org/tags/assembly/"
+                    /></url><url>
+            <loc>http://example.org/categories/computing/</loc><lastmod>2023-10-16T13:00:11&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="zh-cn"
+                        href="http://example.org/zh-cn/categories/computing/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="en"
+                    href="http://example.org/categories/computing/"
+                    /></url><url>
+            <loc>http://example.org/</loc><lastmod>2023-10-16T13:00:11&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="zh-cn"
                         href="http://example.org/zh-cn/"
@@ -20,12 +47,21 @@
                     hreflang="en"
                     href="http://example.org/"
                     /></url><url>
-            <loc>http://example.org/tags/</loc><changefreq>weekly</changefreq><priority>0.5</priority><xhtml:link
+            <loc>http://example.org/posts/</loc><lastmod>2023-10-16T13:00:11&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
                         rel="alternate"
                         hreflang="zh-cn"
-                        href="http://example.org/zh-cn/tags/"
+                        href="http://example.org/zh-cn/posts/"
                         /><xhtml:link
                     rel="alternate"
                     hreflang="en"
-                    href="http://example.org/tags/"
+                    href="http://example.org/posts/"
+                    /></url><url>
+            <loc>http://example.org/simple-mixed-programming-with-c-and-assembly/</loc><lastmod>2023-10-16T13:00:11&#43;08:00</lastmod><changefreq>weekly</changefreq><priority>1</priority><xhtml:link
+                        rel="alternate"
+                        hreflang="zh-cn"
+                        href="http://example.org/zh-cn/simple-mixed-programming-with-c-and-assembly/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="en"
+                    href="http://example.org/simple-mixed-programming-with-c-and-assembly/"
                     /></url></urlset>
