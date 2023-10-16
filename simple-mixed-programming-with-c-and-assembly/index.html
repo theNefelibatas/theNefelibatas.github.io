@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
-        <title>Simple Mixed Programming With C and Assembly - Nepenthe</title><meta name="Description" content="Calculating the Fibonacci sequence using mixed programming with C and Assembly languages."><meta property="og:title" content="Simple Mixed Programming With C and Assembly" />
+        <title>Simple Mixed Programming With C and Assembly Languages - Nepenthe</title><meta name="Description" content="Calculating the Fibonacci sequence using mixed programming with C and Assembly languages."><meta property="og:title" content="Simple Mixed Programming With C and Assembly Languages" />
 <meta property="og:description" content="Calculating the Fibonacci sequence using mixed programming with C and Assembly languages." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://example.org/simple-mixed-programming-with-c-and-assembly/" /><meta property="og:image" content="http://example.org/logo.png"/><meta property="article:section" content="posts" />
@@ -13,7 +13,7 @@
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="http://example.org/logo.png"/>
 
-<meta name="twitter:title" content="Simple Mixed Programming With C and Assembly"/>
+<meta name="twitter:title" content="Simple Mixed Programming With C and Assembly Languages"/>
 <meta name="twitter:description" content="Calculating the Fibonacci sequence using mixed programming with C and Assembly languages."/>
 <meta name="application-name" content="Nepenthe">
 <meta name="apple-mobile-web-app-title" content="Nepenthe"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
@@ -24,12 +24,12 @@
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
-        "headline": "Simple Mixed Programming With C and Assembly",
+        "headline": "Simple Mixed Programming With C and Assembly Languages",
         "inLanguage": "en",
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "http:\/\/example.org\/simple-mixed-programming-with-c-and-assembly\/"
-        },"genre": "posts","keywords": "Assembly","wordcount":  597 ,
+        },"genre": "posts","keywords": "Assembly","wordcount":  620 ,
         "url": "http:\/\/example.org\/simple-mixed-programming-with-c-and-assembly\/","datePublished": "2023-10-16T13:00:11+08:00","dateModified": "2023-10-16T13:00:11+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -107,9 +107,9 @@
                 <div class="container"><div class="toc" id="toc-auto">
             <h2 class="toc-title">Contents</h2>
             <div class="toc-content" id="toc-content-auto"></div>
-        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Simple Mixed Programming With C and Assembly</h1><div class="post-meta">
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Simple Mixed Programming With C and Assembly Languages</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://nepenthe.site/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Nepenthe</a></span>&nbsp;<span class="post-category">included in <a href="/categories/computing/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>Computing</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-10-16">2023-10-16</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;597 words&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-10-16">2023-10-16</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;620 words&nbsp;
                 <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;3 minutes&nbsp;</div>
         </div><div class="details toc" id="toc-static"  data-kept="true">
                 <div class="details-summary toc-title">
@@ -136,46 +136,30 @@ F(n-1)+F(n-2) &amp; \textrm{if } n \geq 3 \textrm{, } n\in\mathbb{N}
 $$</p>
 <p>Write an assembly subroutine <code>ditui1</code> to compute the above sequence. Use C functions to obtain the input, call the assembly function <code>ditui1</code>, and display the results returned by the subroutine.</p>
 <h2 id="environment">Environment</h2>
-<p>Programming Environment: WSL2 Ubuntu22.04</p>
+<p>Programming Environment: WSL2 Ubuntu22.04 64-bit</p>
 <p>Editor: VSCode</p>
 <p>Compiler versions are as follows:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">gcc --version
-</span></span></code></pre></td></tr></table>
-</div>
-</div><div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-console" data-lang="console"><span class="line"><span class="cl"><span class="go">gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0
-</span></span></span><span class="line"><span class="cl"><span class="go">Copyright (C) 2021 Free Software Foundation, Inc.
-</span></span></span><span class="line"><span class="cl"><span class="go">This is free software; see the source for copying conditions.  There is NO
-</span></span></span><span class="line"><span class="cl"><span class="go">warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
-</span></span></span></code></pre></td></tr></table>
-</div>
-</div><div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">nasm --version
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ gcc --version
+</span></span><span class="line"><span class="cl">gcc <span class="o">(</span>Ubuntu 11.4.0-1ubuntu1~22.04<span class="o">)</span> 11.4.0
+</span></span><span class="line"><span class="cl">Copyright <span class="o">(</span>C<span class="o">)</span> <span class="m">2021</span> Free Software Foundation, Inc.
+</span></span><span class="line"><span class="cl">This is free software<span class="p">;</span> see the <span class="nb">source</span> <span class="k">for</span> copying conditions.  There is NO
+</span></span><span class="line"><span class="cl">warranty<span class="p">;</span> not even <span class="k">for</span> MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">$ nasm --version
+</span></span><span class="line"><span class="cl">NASM version 2.15.05
 </span></span></code></pre></td></tr></table>
-</div>
-</div><div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-console" data-lang="console"><span class="line"><span class="cl"><span class="go">NASM version 2.15.05
-</span></span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="solution">Solution</h2>
 <p>Write <code>main.c</code> to handle input and output and create <code>fibonacci.asm</code> to define the subroutine <code>ditui1</code>.</p>
@@ -195,15 +179,15 @@ $$</p>
 </span></span><span class="line"><span class="cl">└── main.c
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>To compile:</p>
+</div><p>To compile based on 32-bit platform:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">nasm -f elf32 fibonacci.asm -o fibonacci.o
-</span></span><span class="line"><span class="cl">gcc -m32 main.c fibonacci.o -o fibonacci
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ nasm -f elf32 fibonacci.asm -o fibonacci.o
+</span></span><span class="line"><span class="cl">$ gcc -m32 main.c fibonacci.o -o fibonacci
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>The <code>main.c</code> code is:</p>
@@ -306,7 +290,7 @@ $$</p>
 </span></span><span class="line"><span class="cl">global ditui1
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">ditui1:
-</span></span><span class="line"><span class="cl">    ; Protect the stack
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    push ebx
 </span></span><span class="line"><span class="cl">    push ecx
 </span></span><span class="line"><span class="cl">    push edx
@@ -354,23 +338,23 @@ $$</p>
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-console" data-lang="console"><span class="line"><span class="cl"><span class="gp">$</span> nasm -f elf32 fibonacci.asm -o fibonacci.o
-</span></span><span class="line"><span class="cl"><span class="gp">$</span> gcc -m32 main.c fibonacci.o -o fibonacci
-</span></span><span class="line"><span class="cl"><span class="go">In file included from main.c:1:
-</span></span></span><span class="line"><span class="cl"><span class="go">/usr/include/stdio.h:27:10: fatal error: bits/libc-header-start.h: No such file or directory
-</span></span></span><span class="line"><span class="cl"><span class="go">   27 | #include &lt;bits/libc-header-start.h&gt;
-</span></span></span><span class="line"><span class="cl"><span class="go">      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~
-</span></span></span><span class="line"><span class="cl"><span class="go">compilation terminated.
-</span></span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ nasm -f elf32 fibonacci.asm -o fibonacci.o
+</span></span><span class="line"><span class="cl">$ gcc -m32 main.c fibonacci.o -o fibonacci
+</span></span><span class="line"><span class="cl">In file included from main.c:1:
+</span></span><span class="line"><span class="cl">/usr/include/stdio.h:27:10: fatal error: bits/libc-header-start.h: No such file or directory
+</span></span><span class="line"><span class="cl">   <span class="m">27</span> <span class="p">|</span> <span class="c1">#include &lt;bits/libc-header-start.h&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">|</span>          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+</span></span><span class="line"><span class="cl">compilation terminated.
+</span></span></code></pre></td></tr></table>
 </div>
-</div><p>Refer to the solution: <a href="https://stackoverflow.com/questions/54082459/fatal-error-bits-libc-header-start-h-no-such-file-or-directory-while-compili" target="_blank" rel="noopener noreffer ">c - &ldquo;fatal error: bits/libc-header-start.h: No such file or directory&rdquo; while compiling HTK - Stack Overflow</a></p>
-<p>On 64-bit Ubuntu, gcc normally only comes with 64-bit libraries. So, execute the following:</p>
+</div><p>Refer to this question on StackOverflow: <a href="https://stackoverflow.com/questions/54082459/fatal-error-bits-libc-header-start-h-no-such-file-or-directory-while-compili" target="_blank" rel="noopener noreffer ">c - &ldquo;fatal error: bits/libc-header-start.h: No such file or directory&rdquo; while compiling HTK - Stack Overflow</a></p>
+<p>On 64-bit Ubuntu, gcc normally only comes with 64-bit libraries. So you need to install 32-bit headers and libraries. Try to execute the following command:</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo apt-get install gcc-multilib
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ sudo apt-get install gcc-multilib
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>Then compile and run:</p>
@@ -381,9 +365,9 @@ $$</p>
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">nasm -f elf32 fibonacci.asm -o fibonacci.o
-</span></span><span class="line"><span class="cl">gcc -m32 main.c fibonacci.o -o fibonacci
-</span></span><span class="line"><span class="cl">./fibonacci
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ nasm -f elf32 fibonacci.asm -o fibonacci.o
+</span></span><span class="line"><span class="cl">$ gcc -m32 main.c fibonacci.o -o fibonacci
+</span></span><span class="line"><span class="cl">$ ./fibonacci
 </span></span></code></pre></td></tr></table>
 </div>
 </div></div><div class="post-footer" id="post-footer">
@@ -397,7 +381,7 @@ $$</p>
                             <a class="link-to-markdown" href="/simple-mixed-programming-with-c-and-assembly/index.md" target="_blank">Read Markdown</a>
                         </span></div>
             <div class="post-info-share">
-                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="http://example.org/simple-mixed-programming-with-c-and-assembly/" data-title="Simple Mixed Programming With C and Assembly" data-hashtags="Assembly"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="http://example.org/simple-mixed-programming-with-c-and-assembly/" data-hashtag="Assembly"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Reddit" data-sharer="reddit" data-url="http://example.org/simple-mixed-programming-with-c-and-assembly/"><i class="fab fa-reddit fa-fw" aria-hidden="true"></i></a></span>
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="http://example.org/simple-mixed-programming-with-c-and-assembly/" data-title="Simple Mixed Programming With C and Assembly Languages" data-hashtags="Assembly"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="http://example.org/simple-mixed-programming-with-c-and-assembly/" data-hashtag="Assembly"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Reddit" data-sharer="reddit" data-url="http://example.org/simple-mixed-programming-with-c-and-assembly/"><i class="fab fa-reddit fa-fw" aria-hidden="true"></i></a></span>
             </div>
         </div>
     </div>

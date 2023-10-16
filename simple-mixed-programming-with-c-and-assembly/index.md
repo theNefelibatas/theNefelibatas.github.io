@@ -1,4 +1,4 @@
-# Simple Mixed Programming With C and Assembly
+# Simple Mixed Programming With C and Assembly Languages
 
 
 <!--more-->
@@ -21,28 +21,20 @@ Write an assembly subroutine `ditui1` to compute the above sequence. Use C funct
 
 ## Environment
 
-Programming Environment: WSL2 Ubuntu22.04
+Programming Environment: WSL2 Ubuntu22.04 64-bit
 
 Editor: VSCode
 
 Compiler versions are as follows:
 
-```shell
-gcc --version
-```
-
-```console
+```bash
+$ gcc --version
 gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0
 Copyright (C) 2021 Free Software Foundation, Inc.
 This is free software; see the source for copying conditions.  There is NO
 warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
-```
 
-```shell
-nasm --version
-```
-
-```console
+$ nasm --version
 NASM version 2.15.05
 ```
 
@@ -58,11 +50,11 @@ simple-mixed-programming
 └── main.c
 ```
 
-To compile:
+To compile based on 32-bit platform:
 
-```shell
-nasm -f elf32 fibonacci.asm -o fibonacci.o
-gcc -m32 main.c fibonacci.o -o fibonacci
+```bash
+$ nasm -f elf32 fibonacci.asm -o fibonacci.o
+$ gcc -m32 main.c fibonacci.o -o fibonacci
 ```
 
 The `main.c` code is:
@@ -103,7 +95,7 @@ section .text
 global ditui1
 
 ditui1:
-    ; Protect the stack
+
     push ebx
     push ecx
     push edx
@@ -141,7 +133,7 @@ end:
 
 Executing the above commands would yield the following error:
 
-```console
+```bash
 $ nasm -f elf32 fibonacci.asm -o fibonacci.o
 $ gcc -m32 main.c fibonacci.o -o fibonacci
 In file included from main.c:1:
@@ -151,19 +143,19 @@ In file included from main.c:1:
 compilation terminated.
 ```
 
-Refer to the solution: [c - "fatal error: bits/libc-header-start.h: No such file or directory" while compiling HTK - Stack Overflow](https://stackoverflow.com/questions/54082459/fatal-error-bits-libc-header-start-h-no-such-file-or-directory-while-compili)
+Refer to this question on StackOverflow: [c - "fatal error: bits/libc-header-start.h: No such file or directory" while compiling HTK - Stack Overflow](https://stackoverflow.com/questions/54082459/fatal-error-bits-libc-header-start-h-no-such-file-or-directory-while-compili)
 
-On 64-bit Ubuntu, gcc normally only comes with 64-bit libraries. So, execute the following:
+On 64-bit Ubuntu, gcc normally only comes with 64-bit libraries. So you need to install 32-bit headers and libraries. Try to execute the following command:
 
-```shell
-sudo apt-get install gcc-multilib
+```bash
+$ sudo apt-get install gcc-multilib
 ```
 
 Then compile and run:
 
-```shell
-nasm -f elf32 fibonacci.asm -o fibonacci.o
-gcc -m32 main.c fibonacci.o -o fibonacci
-./fibonacci
+```bash
+$ nasm -f elf32 fibonacci.asm -o fibonacci.o
+$ gcc -m32 main.c fibonacci.o -o fibonacci
+$ ./fibonacci
 ```
 

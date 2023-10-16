@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <meta name="robots" content="noodp" />
-        <title>简单的 C 语言与汇编混合编程 - Nepenthe</title><meta name="Description" content="使用 C 语言和汇编语言混合编程来计算斐波那契数列。"><meta property="og:title" content="简单的 C 语言与汇编混合编程" />
+        <title>简单的 C 语言与汇编语言混合编程 - Nepenthe</title><meta name="Description" content="使用 C 语言和汇编语言混合编程来计算斐波那契数列。"><meta property="og:title" content="简单的 C 语言与汇编语言混合编程" />
 <meta property="og:description" content="使用 C 语言和汇编语言混合编程来计算斐波那契数列。" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://example.org/zh-cn/simple-mixed-programming-with-c-and-assembly/" /><meta property="og:image" content="http://example.org/logo.png"/><meta property="article:section" content="posts" />
@@ -13,7 +13,7 @@
 <meta name="twitter:card" content="summary_large_image"/>
 <meta name="twitter:image" content="http://example.org/logo.png"/>
 
-<meta name="twitter:title" content="简单的 C 语言与汇编混合编程"/>
+<meta name="twitter:title" content="简单的 C 语言与汇编语言混合编程"/>
 <meta name="twitter:description" content="使用 C 语言和汇编语言混合编程来计算斐波那契数列。"/>
 <meta name="application-name" content="Nepenthe">
 <meta name="apple-mobile-web-app-title" content="Nepenthe"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
@@ -24,12 +24,12 @@
     {
         "@context": "http://schema.org",
         "@type": "BlogPosting",
-        "headline": "简单的 C 语言与汇编混合编程",
+        "headline": "简单的 C 语言与汇编语言混合编程",
         "inLanguage": "zh-CN",
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "http:\/\/example.org\/zh-cn\/simple-mixed-programming-with-c-and-assembly\/"
-        },"genre": "posts","keywords": "Assembly","wordcount":  848 ,
+        },"genre": "posts","keywords": "Assembly","wordcount":  874 ,
         "url": "http:\/\/example.org\/zh-cn\/simple-mixed-programming-with-c-and-assembly\/","datePublished": "2023-10-16T13:00:11+08:00","dateModified": "2023-10-16T13:00:11+08:00","publisher": {
             "@type": "Organization",
             "name": ""},"author": {
@@ -107,9 +107,9 @@
                 <div class="container"><div class="toc" id="toc-auto">
             <h2 class="toc-title">目录</h2>
             <div class="toc-content" id="toc-content-auto"></div>
-        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">简单的 C 语言与汇编混合编程</h1><div class="post-meta">
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">简单的 C 语言与汇编语言混合编程</h1><div class="post-meta">
             <div class="post-meta-line"><span class="post-author"><a href="https://nepenthe.site/" title="Author" target="_blank" rel="noopener noreffer author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Nepenthe</a></span>&nbsp;<span class="post-category">收录于 <a href="/zh-cn/categories/computing/"><i class="far fa-folder fa-fw" aria-hidden="true"></i>计算</a></span></div>
-            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-10-16">2023-10-16</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 848 字&nbsp;
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2023-10-16">2023-10-16</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;约 874 字&nbsp;
                 <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;预计阅读 2 分钟&nbsp;</div>
         </div><div class="details toc" id="toc-static"  data-kept="true">
                 <div class="details-summary toc-title">
@@ -136,46 +136,30 @@ F(n-1)+F(n-2) &amp; \textrm{if } n \geq 3 \textrm{, } n\in\mathbb{N}
 $$</p>
 <p>用汇编语言编写计算上述数列的子程序 <code>ditui1</code>，用C语言函数来获取输入、调用 <code>ditui1</code> 汇编函数，并且显示子程序返回的结果。</p>
 <h2 id="环境">环境</h2>
-<p>编程环境：WSL2 Ubuntu22.04</p>
+<p>编程环境：WSL2 Ubuntu22.04 64 位</p>
 <p>编辑器：VSCode</p>
 <p>编译器信息如下：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">gcc --version
-</span></span></code></pre></td></tr></table>
-</div>
-</div><div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span><span class="lnt">3
 </span><span class="lnt">4
+</span><span class="lnt">5
+</span><span class="lnt">6
+</span><span class="lnt">7
+</span><span class="lnt">8
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-console" data-lang="console"><span class="line"><span class="cl"><span class="go">gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0
-</span></span></span><span class="line"><span class="cl"><span class="go">Copyright (C) 2021 Free Software Foundation, Inc.
-</span></span></span><span class="line"><span class="cl"><span class="go">This is free software; see the source for copying conditions.  There is NO
-</span></span></span><span class="line"><span class="cl"><span class="go">warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
-</span></span></span></code></pre></td></tr></table>
-</div>
-</div><div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">nasm --version
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ gcc --version
+</span></span><span class="line"><span class="cl">gcc <span class="o">(</span>Ubuntu 11.4.0-1ubuntu1~22.04<span class="o">)</span> 11.4.0
+</span></span><span class="line"><span class="cl">Copyright <span class="o">(</span>C<span class="o">)</span> <span class="m">2021</span> Free Software Foundation, Inc.
+</span></span><span class="line"><span class="cl">This is free software<span class="p">;</span> see the <span class="nb">source</span> <span class="k">for</span> copying conditions.  There is NO
+</span></span><span class="line"><span class="cl">warranty<span class="p">;</span> not even <span class="k">for</span> MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">$ nasm --version
+</span></span><span class="line"><span class="cl">NASM version 2.15.05
 </span></span></code></pre></td></tr></table>
-</div>
-</div><div class="highlight"><div class="chroma">
-<table class="lntable"><tr><td class="lntd">
-<pre tabindex="0" class="chroma"><code><span class="lnt">1
-</span></code></pre></td>
-<td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-console" data-lang="console"><span class="line"><span class="cl"><span class="go">NASM version 2.15.05
-</span></span></span></code></pre></td></tr></table>
 </div>
 </div><h2 id="解决方案">解决方案</h2>
 <p>编写 <code>main.c</code> 处理输入并进行输出，编写 <code>fibonacci.asm</code> 完成子程序 <code>ditui1</code></p>
@@ -195,15 +179,15 @@ $$</p>
 </span></span><span class="line"><span class="cl">└── main.c
 </span></span></code></pre></td></tr></table>
 </div>
-</div><p>编译命令如下：</p>
+</div><p>编译命令如下，基于 32 位平台：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span><span class="lnt">2
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">nasm -f elf32 fibonacci.asm -o fibonacci.o
-</span></span><span class="line"><span class="cl">gcc -m32 main.c fibonacci.o -o fibonacci
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ nasm -f elf32 fibonacci.asm -o fibonacci.o
+</span></span><span class="line"><span class="cl">$ gcc -m32 main.c fibonacci.o -o fibonacci
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p><code>main.c</code> 代码如下：</p>
@@ -308,7 +292,7 @@ $$</p>
 </span></span><span class="line"><span class="cl">global ditui1
 </span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">ditui1:
-</span></span><span class="line"><span class="cl">    ；保护栈
+</span></span><span class="line"><span class="cl">
 </span></span><span class="line"><span class="cl">    push ebx
 </span></span><span class="line"><span class="cl">    push ecx
 </span></span><span class="line"><span class="cl">    push edx
@@ -356,23 +340,23 @@ $$</p>
 </span><span class="lnt">7
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-console" data-lang="console"><span class="line"><span class="cl"><span class="gp">$</span> nasm -f elf32 fibonacci.asm -o fibonacci.o
-</span></span><span class="line"><span class="cl"><span class="gp">$</span> gcc -m32 main.c fibonacci.o -o fibonacci
-</span></span><span class="line"><span class="cl"><span class="go">In file included from main.c:1:
-</span></span></span><span class="line"><span class="cl"><span class="go">/usr/include/stdio.h:27:10: fatal error: bits/libc-header-start.h: No such file or directory
-</span></span></span><span class="line"><span class="cl"><span class="go">   27 | #include &lt;bits/libc-header-start.h&gt;
-</span></span></span><span class="line"><span class="cl"><span class="go">      |          ^~~~~~~~~~~~~~~~~~~~~~~~~~
-</span></span></span><span class="line"><span class="cl"><span class="go">compilation terminated.
-</span></span></span></code></pre></td></tr></table>
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ nasm -f elf32 fibonacci.asm -o fibonacci.o
+</span></span><span class="line"><span class="cl">$ gcc -m32 main.c fibonacci.o -o fibonacci
+</span></span><span class="line"><span class="cl">In file included from main.c:1:
+</span></span><span class="line"><span class="cl">/usr/include/stdio.h:27:10: fatal error: bits/libc-header-start.h: No such file or directory
+</span></span><span class="line"><span class="cl">   <span class="m">27</span> <span class="p">|</span> <span class="c1">#include &lt;bits/libc-header-start.h&gt;</span>
+</span></span><span class="line"><span class="cl">      <span class="p">|</span>          ^~~~~~~~~~~~~~~~~~~~~~~~~~
+</span></span><span class="line"><span class="cl">compilation terminated.
+</span></span></code></pre></td></tr></table>
 </div>
-</div><p>参考解决方案：<a href="https://stackoverflow.com/questions/54082459/fatal-error-bits-libc-header-start-h-no-such-file-or-directory-while-compili" target="_blank" rel="noopener noreffer ">c - &ldquo;fatal error: bits/libc-header-start.h: No such file or directory&rdquo; while compiling HTK - Stack Overflow</a></p>
-<p>在 64 位 Ubuntu 上 <code>gcc</code> 通常只有 64 位工具，因此执行以下命令：</p>
+</div><p>参考 StackOverflow 上的这个提问：<a href="https://stackoverflow.com/questions/54082459/fatal-error-bits-libc-header-start-h-no-such-file-or-directory-while-compili" target="_blank" rel="noopener noreffer ">c - &ldquo;fatal error: bits/libc-header-start.h: No such file or directory&rdquo; while compiling HTK - Stack Overflow</a></p>
+<p>在 64 位 Ubuntu 上 <code>gcc</code> 通常只有 64 位工具，因此需要安装 32 位工具，执行以下命令：</p>
 <div class="highlight"><div class="chroma">
 <table class="lntable"><tr><td class="lntd">
 <pre tabindex="0" class="chroma"><code><span class="lnt">1
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">sudo apt-get install gcc-multilib
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ sudo apt-get install gcc-multilib
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>再编译运行即可：</p>
@@ -383,9 +367,9 @@ $$</p>
 </span><span class="lnt">3
 </span></code></pre></td>
 <td class="lntd">
-<pre tabindex="0" class="chroma"><code class="language-shell" data-lang="shell"><span class="line"><span class="cl">nasm -f elf32 fibonacci.asm -o fibonacci.o
-</span></span><span class="line"><span class="cl">gcc -m32 main.c fibonacci.o -o fibonacci
-</span></span><span class="line"><span class="cl">./fibonacci
+<pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ nasm -f elf32 fibonacci.asm -o fibonacci.o
+</span></span><span class="line"><span class="cl">$ gcc -m32 main.c fibonacci.o -o fibonacci
+</span></span><span class="line"><span class="cl">$ ./fibonacci
 </span></span></code></pre></td></tr></table>
 </div>
 </div></div><div class="post-footer" id="post-footer">
@@ -399,7 +383,7 @@ $$</p>
                             <a class="link-to-markdown" href="/zh-cn/simple-mixed-programming-with-c-and-assembly/index.md" target="_blank">阅读原始文档</a>
                         </span></div>
             <div class="post-info-share">
-                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="http://example.org/zh-cn/simple-mixed-programming-with-c-and-assembly/" data-title="简单的 C 语言与汇编混合编程" data-hashtags="Assembly"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="http://example.org/zh-cn/simple-mixed-programming-with-c-and-assembly/" data-hashtag="Assembly"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Reddit" data-sharer="reddit" data-url="http://example.org/zh-cn/simple-mixed-programming-with-c-and-assembly/"><i class="fab fa-reddit fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="http://example.org/zh-cn/simple-mixed-programming-with-c-and-assembly/" data-title="简单的 C 语言与汇编混合编程"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></span>
+                <span><a href="javascript:void(0);" title="分享到 Twitter" data-sharer="twitter" data-url="http://example.org/zh-cn/simple-mixed-programming-with-c-and-assembly/" data-title="简单的 C 语言与汇编语言混合编程" data-hashtags="Assembly"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Facebook" data-sharer="facebook" data-url="http://example.org/zh-cn/simple-mixed-programming-with-c-and-assembly/" data-hashtag="Assembly"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 Reddit" data-sharer="reddit" data-url="http://example.org/zh-cn/simple-mixed-programming-with-c-and-assembly/"><i class="fab fa-reddit fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="分享到 微博" data-sharer="weibo" data-url="http://example.org/zh-cn/simple-mixed-programming-with-c-and-assembly/" data-title="简单的 C 语言与汇编语言混合编程"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></span>
             </div>
         </div>
     </div>
@@ -425,5 +409,5 @@ $$</p>
             </a><a href="#" id="view-comments" class="fixed-button" title="查看评论">
                 <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
             </a>
-        </div><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/typeit/index.umd.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js"></script><script type="text/javascript" src="/lib/katex/contrib/auto-render.min.js"></script><script type="text/javascript" src="/lib/katex/contrib/copy-tex.min.js"></script><script type="text/javascript" src="/lib/katex/contrib/mhchem.min.js"></script><script type="text/javascript" src="/lib/cookieconsent/cookieconsent.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":50},"comment":{},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"data":{"id-1":"Nepentheの主页","id-2":"Nepentheの主页"},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/zh-cn/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":30,"type":"lunr"},"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"id-1":["id-1"],"id-2":["id-2"]},"duration":-1,"speed":60}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+        </div><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.stemmer.support.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.zh.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/typeit/index.umd.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js"></script><script type="text/javascript" src="/lib/katex/contrib/auto-render.min.js"></script><script type="text/javascript" src="/lib/katex/contrib/copy-tex.min.js"></script><script type="text/javascript" src="/lib/katex/contrib/mhchem.min.js"></script><script type="text/javascript" src="/lib/cookieconsent/cookieconsent.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"复制到剪贴板","maxShownLines":50},"comment":{},"cookieconsent":{"content":{"dismiss":"同意","link":"了解更多","message":"本网站使用 Cookies 来改善您的浏览体验."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"data":{"id-1":"Nepentheの网站","id-2":"Nepentheの网站"},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/zh-cn/index.json","lunrLanguageCode":"zh","lunrSegmentitURL":"/lib/lunr/lunr.segmentit.js","maxResultLength":10,"noResultsFound":"没有找到结果","snippetLength":30,"type":"lunr"},"typeit":{"cursorChar":"|","cursorSpeed":1000,"data":{"id-1":["id-1"],"id-2":["id-2"]},"duration":-1,"speed":60}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
 </html>

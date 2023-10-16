@@ -1,4 +1,4 @@
-# 简单的 C 语言与汇编混合编程
+# 简单的 C 语言与汇编语言混合编程
 
 
 <!--more-->
@@ -21,28 +21,20 @@ $$
 
 ## 环境
 
-编程环境：WSL2 Ubuntu22.04
+编程环境：WSL2 Ubuntu22.04 64 位
 
 编辑器：VSCode
 
 编译器信息如下：
 
-```shell
-gcc --version
-```
-
-```console
+```bash
+$ gcc --version
 gcc (Ubuntu 11.4.0-1ubuntu1~22.04) 11.4.0
 Copyright (C) 2021 Free Software Foundation, Inc.
 This is free software; see the source for copying conditions.  There is NO
 warranty; not even for MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
-```
 
-```shell
-nasm --version
-```
-
-```console
+$ nasm --version
 NASM version 2.15.05
 ```
 
@@ -58,11 +50,11 @@ simple-mixed-programming
 └── main.c
 ```
 
-编译命令如下：
+编译命令如下，基于 32 位平台：
 
-```shell
-nasm -f elf32 fibonacci.asm -o fibonacci.o
-gcc -m32 main.c fibonacci.o -o fibonacci
+```bash
+$ nasm -f elf32 fibonacci.asm -o fibonacci.o
+$ gcc -m32 main.c fibonacci.o -o fibonacci
 ```
 
 `main.c` 代码如下：
@@ -104,7 +96,7 @@ section .text
 global ditui1
 
 ditui1:
-    ；保护栈
+
     push ebx
     push ecx
     push edx
@@ -142,7 +134,7 @@ end:
 
 直接执行上面的命令会出现如下错误：
 
-```console
+```bash
 $ nasm -f elf32 fibonacci.asm -o fibonacci.o
 $ gcc -m32 main.c fibonacci.o -o fibonacci
 In file included from main.c:1:
@@ -152,19 +144,19 @@ In file included from main.c:1:
 compilation terminated.
 ```
 
-参考解决方案：[c - "fatal error: bits/libc-header-start.h: No such file or directory" while compiling HTK - Stack Overflow](https://stackoverflow.com/questions/54082459/fatal-error-bits-libc-header-start-h-no-such-file-or-directory-while-compili)
+参考 StackOverflow 上的这个提问：[c - "fatal error: bits/libc-header-start.h: No such file or directory" while compiling HTK - Stack Overflow](https://stackoverflow.com/questions/54082459/fatal-error-bits-libc-header-start-h-no-such-file-or-directory-while-compili)
 
-在 64 位 Ubuntu 上 `gcc` 通常只有 64 位工具，因此执行以下命令：
+在 64 位 Ubuntu 上 `gcc` 通常只有 64 位工具，因此需要安装 32 位工具，执行以下命令：
 
-```shell
-sudo apt-get install gcc-multilib
+```bash
+$ sudo apt-get install gcc-multilib
 ```
 
 再编译运行即可：
 
-```shell
-nasm -f elf32 fibonacci.asm -o fibonacci.o
-gcc -m32 main.c fibonacci.o -o fibonacci
-./fibonacci
+```bash
+$ nasm -f elf32 fibonacci.asm -o fibonacci.o
+$ gcc -m32 main.c fibonacci.o -o fibonacci
+$ ./fibonacci
 ```
 
