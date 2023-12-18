@@ -1,10 +1,18 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title> - Tag - Nepenthe</title>
+        <title> - 标签 - Nepenthe</title>
         <link>http://example.org/tags/</link>
-        <description> - Tag - Nepenthe</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 16 Oct 2023 13:00:11 &#43;0800</lastBuildDate><atom:link href="http://example.org/tags/" rel="self" type="application/rss+xml" /><item>
-    <title>Assembly Language</title>
+        <description> - 标签 - Nepenthe</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Mon, 18 Dec 2023 16:00:11 &#43;0800</lastBuildDate><atom:link href="http://example.org/tags/" rel="self" type="application/rss+xml" /><item>
+    <title>Go语言</title>
+    <link>http://example.org/tags/go/</link>
+    <pubDate>Mon, 18 Dec 2023 16:00:11 &#43;0800</pubDate>
+    <author>Nepenthe</author>
+    <guid>http://example.org/tags/go/</guid>
+    <description><![CDATA[]]></description>
+</item>
+<item>
+    <title>汇编语言</title>
     <link>http://example.org/tags/assembly/</link>
     <pubDate>Mon, 16 Oct 2023 13:00:11 &#43;0800</pubDate>
     <author>Nepenthe</author>

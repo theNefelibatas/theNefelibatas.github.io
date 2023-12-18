@@ -1,0 +1,15 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Computing - Category - Nepenthe</title>
+        <link>http://example.org/en/categories/computing/</link>
+        <description>Computing - Category - Nepenthe</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 16 Oct 2023 13:00:11 &#43;0800</lastBuildDate><atom:link href="http://example.org/en/categories/computing/" rel="self" type="application/rss+xml" /><item>
+    <title>Simple Mixed Programming With C and Assembly Languages</title>
+    <link>http://example.org/en/simple-mixed-programming-with-c-and-assembly/</link>
+    <pubDate>Mon, 16 Oct 2023 13:00:11 &#43;0800</pubDate>
+    <author>Nepenthe</author>
+    <guid>http://example.org/en/simple-mixed-programming-with-c-and-assembly/</guid>
+    <description><![CDATA[Calculating the Fibonacci sequence using mixed programming with C and Assembly languages.]]></description>
+</item>
+</channel>
+</rss>

@@ -3,15 +3,23 @@
         <title>Nepenthe</title>
         <link>http://example.org/</link>
         <description>Hi there, I&#39;m Nepenthe.</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 16 Oct 2023 13:00:11 &#43;0800</lastBuildDate>
+        <generator>Hugo -- gohugo.io</generator><language>zh-CN</language><lastBuildDate>Mon, 18 Dec 2023 16:00:11 &#43;0800</lastBuildDate>
             <atom:link href="http://example.org/index.xml" rel="self" type="application/rss+xml" />
         <item>
-    <title>Simple Mixed Programming With C and Assembly Languages</title>
+    <title>探究 Go 语言中的切片</title>
+    <link>http://example.org/go-slice/</link>
+    <pubDate>Mon, 18 Dec 2023 16:00:11 &#43;0800</pubDate>
+    <author>Nepenthe</author>
+    <guid>http://example.org/go-slice/</guid>
+    <description><![CDATA[切片 slice 是 Golang 里经典的数据结构，功能与其他语言的数组类似。本文涉及切片的使用以及源码解析。]]></description>
+</item>
+<item>
+    <title>简单的 C 语言与汇编语言混合编程</title>
     <link>http://example.org/simple-mixed-programming-with-c-and-assembly/</link>
     <pubDate>Mon, 16 Oct 2023 13:00:11 &#43;0800</pubDate>
     <author>Nepenthe</author>
     <guid>http://example.org/simple-mixed-programming-with-c-and-assembly/</guid>
-    <description><![CDATA[Calculating the Fibonacci sequence using mixed programming with C and Assembly languages.]]></description>
+    <description><![CDATA[使用 C 语言和汇编语言混合编程来计算斐波那契数列。]]></description>
 </item>
 </channel>
 </rss>

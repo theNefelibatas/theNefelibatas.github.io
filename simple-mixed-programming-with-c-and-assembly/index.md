@@ -1,11 +1,11 @@
-# Simple Mixed Programming With C and Assembly Languages
+# 简单的 C 语言与汇编语言混合编程
 
 
 <!--more-->
 
-## Task
+## 任务
 
-Given the function:
+给定函数：
 
 $$
 \begin{aligned}
@@ -17,15 +17,15 @@ $$
 \end{aligned}
 $$
 
-Write an assembly subroutine `ditui1` to compute the above sequence. Use C functions to obtain the input, call the assembly function `ditui1`, and display the results returned by the subroutine.
+用汇编语言编写计算上述数列的子程序 `ditui1`，用C语言函数来获取输入、调用 `ditui1` 汇编函数，并且显示子程序返回的结果。
 
-## Environment
+## 环境
 
-Programming Environment: WSL2 Ubuntu22.04 64-bit
+编程环境：WSL2 Ubuntu22.04 64 位
 
-Editor: VSCode
+编辑器：VSCode
 
-Compiler versions are as follows:
+编译器信息如下：
 
 ```bash
 $ gcc --version
@@ -38,9 +38,9 @@ $ nasm --version
 NASM version 2.15.05
 ```
 
-## Solution
+## 解决方案
 
-Write `main.c` to handle input and output and create `fibonacci.asm` to define the subroutine `ditui1`.
+编写 `main.c` 处理输入并进行输出，编写 `fibonacci.asm` 完成子程序 `ditui1`
 
 ```
 simple-mixed-programming
@@ -50,45 +50,46 @@ simple-mixed-programming
 └── main.c
 ```
 
-To compile based on 32-bit platform:
+编译命令如下，基于 32 位平台：
 
 ```bash
 $ nasm -f elf32 fibonacci.asm -o fibonacci.o
 $ gcc -m32 main.c fibonacci.o -o fibonacci
 ```
 
-The `main.c` code is:
+`main.c` 代码如下：
 
 ```c title="main.c"
 #include <stdio.h>
 
-// Declaration of the external assembly function
+// 声明外部的汇编函数
 extern int ditui1();
 
 int main() {
     int n, result;
 
-    // Get the input
+    // 输入
     printf("Enter a number: ");
     scanf("%d", &n);
 
-    // Call the assembly function
+    // 调用汇编函数
     result = ditui1(n);
 
-    // Display the result
+    // 输出
     printf("F(%d) = %d\n", n, result);
 
     return 0;
+
 }
 
 // 0, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89, ...
 ```
 
-In x86 assembly for architectures such as 8086, 80286, and 80386, registers are 16-bit and can be split into 8-bit high and low bytes for operations. For instance, the `ax` register can be divided into `ah` (high byte) and `al` (low byte), and so on.
+在 x86 架构的汇编语言中，如 8086、80286、80386 等，寄存器是 16 位的，可以通过拆分成 8 位的高低字节进行操作。例如，`ax` 寄存器可以拆分为 `ah`（高字节）和 `al`（低字节），`bx` 寄存器可以拆分为 `bh` 和 `bl`，以此类推。
 
-In 32-bit and 64-bit x86 architectures, like Intel Pentium, Core i7, and AMD64 processors, registers are 32-bit (64-bit for 64-bit architecture). In these architectures, `eax` is a 32-bit register, and there isn't a direct split into `eal` and `eah`.
+在 32 位和 64 位的 x86 架构中，如 Intel Pentium、Core i7 和 AMD64 等处理器中，寄存器是 32 位的（对于 64 位架构，寄存器是 64 位的）。在这些架构中，`eax` 是一个 32 位的寄存器，不支持直接拆分成 `eal` 和 `eah`。
 
-Thus, the `fibonacci.asm` will use 32-bit registers directly. The code is:
+因此在 `fibonacci.asm` 中将直接使用 32 位寄存器，代码如下：
 
 ```assembly title="fibonacci.asm"
 section .text
@@ -100,26 +101,26 @@ ditui1:
     push ecx
     push edx
 
-    ; Check if the input n is 0 or 1
+    ; 检查输入n是否为0或1
     cmp eax, 0  
     je end
     cmp eax, 1
     je end
 
-    ; Initialization
+    ; 初始化
     mov ecx, eax
     xor eax, eax
     mov ebx, 0 ;; F(0)
     mov edx, 1 ;; F(1)
 
 iteration:
-    mov eax, edx   ; Save the previous number F(n-1) to the eax register
+    mov eax, edx   ; 将前一个数F(n-1)保存到eax寄存器
 
-    add edx, ebx   ; Compute the next Fibonacci number
+    add edx, ebx   ; 计算下一个斐波那契数
 
-    mov ebx, eax   ; Update F(n-2)
+    mov ebx, eax   ; 更新F(n-2)
 
-    loop iteration  ; Continue the loop
+    loop iteration  ; 继续循环
 
     mov eax, edx
 
@@ -128,10 +129,10 @@ end:
     pop edx
     pop ecx
     pop ebx
-    ret            ; Return
+    ret            ; 返回
 ```
 
-Executing the above commands would yield the following error:
+直接执行上面的命令会出现如下错误：
 
 ```bash
 $ nasm -f elf32 fibonacci.asm -o fibonacci.o
@@ -143,15 +144,15 @@ In file included from main.c:1:
 compilation terminated.
 ```
 
-Refer to this question on StackOverflow: [c - "fatal error: bits/libc-header-start.h: No such file or directory" while compiling HTK - Stack Overflow](https://stackoverflow.com/questions/54082459/fatal-error-bits-libc-header-start-h-no-such-file-or-directory-while-compili)
+参考 StackOverflow 上的这个提问：[c - "fatal error: bits/libc-header-start.h: No such file or directory" while compiling HTK - Stack Overflow](https://stackoverflow.com/questions/54082459/fatal-error-bits-libc-header-start-h-no-such-file-or-directory-while-compili)
 
-On 64-bit Ubuntu, gcc normally only comes with 64-bit libraries. So you need to install 32-bit headers and libraries. Try to execute the following command:
+在 64 位 Ubuntu 上 `gcc` 通常只有 64 位工具，因此需要安装 32 位工具，执行以下命令：
 
 ```bash
 $ sudo apt-get install gcc-multilib
 ```
 
-Then compile and run:
+再编译运行即可：
 
 ```bash
 $ nasm -f elf32 fibonacci.asm -o fibonacci.o
